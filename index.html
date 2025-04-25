@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Static Web with Filterable Cards</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Additional styles for cards and filter */
+    .card {
+      margin-bottom: 20px;  /* Adds space between cards */
+    }
+    .card-body {
+      padding: 20px;
+    }
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .filter-container {
+      margin: 20px 0;
+    }
+    /* Ensuring cards display properly with spacing between them */
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .col-md-4 {
+      margin-bottom: 20px; /* Spacing between columns */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menu -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Work, Jokes, Repeat</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              Projects
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="projects/learning/main.html">Learning</a></li>
+              <li><a class="dropdown-item" href="personal_projects.html">Personal Interest</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cv.html">CV</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+
+  <section id="home" class="text-center py-5">
+    <div class="container">
+        <h3 class="display-49">Welcome! 👋</h3>
+        <p class="lead">Hi, I'm Marcos Nicolás, an Electrical Engineer with a Telecom profile, passionate about AI, Cybersecurity, 
+          and solving real-world challenges using technology.</p>
+        
+        <p class="lead">
+            On this site, you can explore a range of exciting projects I’ve worked on, from machine learning models to AI-powered cybersecurity solutions. 
+            You can also read articles I’ve written about topics that fascinate me—like Time Series Forecasting, Computer Vision (CV), 
+            and cutting-edge tech in security.
+        </p>
+
+        <p class="lead">Feel free to get to know me a bit more and see how I approach learning and building impactful tech solutions.</p>
+
+
+        <br>
+
+        <!-- Roadmap Section -->
+        <h4>🗺️ Site Roadmap</h4>
+        
+        <ul class="list-unstyled">
+            <li><strong>About Me</strong>: Learn more about my background, experiences, and passions. 🙋‍♂️</li>
+            <li><strong>Projects</strong>: Explore my work in AI, Machine Learning, and Cybersecurity. 💡</li>
+            <li><strong>Blog</strong>: Read articles on topics that inspire me 📚 </li>
+            <li><strong>CV</strong>: Check out my professional experience 📄.</li>
+        </ul>
+
+        
+    </div>
+</section>
+
+
+
+  <!-- Footer -->
+  <footer class="bg-light text-center text-muted py-3 mt-auto border-top">
+    <div class="container">
+      <p class="mb-1">© 2025 MySite</p>
+      <a href="mailto:yourmail@example.com" class="text-muted me-3">Email</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-muted">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Function to filter cards by title and topic
+    function filterCards() {
+      const searchTitle = document.getElementById('searchTitle').value.toLowerCase();
+      const searchTopic = document.getElementById('searchTopic').value.toLowerCase();
+      const cards = document.querySelectorAll('.card');
+
+      cards.forEach(card => {
+        const title = card.getAttribute('data-title').toLowerCase();
+        const topic = card.getAttribute('data-topic').toLowerCase();
+
+        // Show or hide cards based on search input
+        if (title.includes(searchTitle) && topic.includes(searchTopic)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
