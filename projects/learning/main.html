@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Static Web with Filterable Cards</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  
+  
   <style>
     /* Additional styles for cards and filter */
     .card {
@@ -28,6 +31,15 @@
     .col-md-4 {
       margin-bottom: 20px; /* Spacing between columns */
     }
+
+
+    .card.featured {
+      border: 2px solid #007bff; /* Blue border to highlight featured project */
+      background-color: #f0f8ff; /* Light blue background for emphasis */
+      box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Subtle shadow for emphasis */
+    }
+
+
   </style>
 </head>
 <body>
@@ -42,7 +54,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="../../index.html">Home</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
@@ -66,112 +78,138 @@
       </div>
     </div>
   </nav>
+
+
+  <br>
+  <center> <h3> <font color="#5f6a6a"> <b> LEARNING PROJECTS </b> </font>  </h3></center>
+  <hr>
   
 
   <!-- Filter Section -->
   <div class="container filter-container">
-    <input type="text" id="searchTitle" class="form-control" placeholder="Search by Title" oninput="filterCards()">
-    <input type="text" id="searchTopic" class="form-control mt-3" placeholder="Search by Topic" oninput="filterCards()">
+      <div class="col-md-3 offset-md-1" >
+          <input type="text" id="searchTitle" class="form-control" placeholder="Search by Title" oninput="filterCards()">
+
+          <!--
+          <input type="text" id="searchTopic" class="form-control mt-3" placeholder="Search by Topic" oninput="filterCards()">
+          -->
+
+          <select id="searchTopic" class="form-control mt-3" onchange="filterCards()">
+            <option value="">Select a Topic</option>
+            <option value="AI">AI</option>
+            <option value="Cybersec">Cybersecurity</option>
+          </select>
+          
+
+
+      </div>
   </div>
 
   <!-- Cards Section -->
   <div class="container">
     <div class="row" id="cardsContainer">
-      <!-- Example Cards -->
-      <div class="col-md-4 card" data-title="NLP" data-topic="AI">
+
+
+
+
+      <div class="col-md-3  card" data-title="Background" data-topic="AI">
+        <div class="card-body">
+          <h5 class="card-title">Background</h5>
+          <p class="card-text">Explore hands-on resources to learn and implement AI techniques effectively.</p>
+          <a href="project4.html" class="btn btn-primary">Go to Project</a>
+        </div>
+      </div>
+
+      <div class="col-md-3 offset-md-1 card" data-title="Practical Guides" data-topic="AI">
+        <div class="card-body">
+          <h5 class="card-title">AI Practical Guides</h5>
+          <p class="card-text">Explore foundational topics in data manipulation (NumPy, Pandas) 
+            and Object-Oriented Programming (OOP).</p>
+          <a href="project4.html" class="btn btn-primary">Go to Project</a>
+        </div>
+      </div>
+
+
+      <div class="col-md-3 offset-md-1 card" data-title="Frameworks" data-topic="AI">
+        <div class="card-body">
+          <h5 class="card-title">Deep Learning Frameworks</h5>
+          <p class="card-text">Explore projects that leverage powerful frameworks for building and deploying AI models.</p>
+          <a href="project4.html" class="btn btn-primary">Go to Project</a>
+        </div>
+      </div>
+
+      <div class="col-md-3  card" data-title="Regression" data-topic="AI">
+        <div class="card-body">
+          <h5 class="card-title">Regression</h5>
+          <p class="card-text">Explore projects that model relationships between variables to predict continuous outcomes.</p>
+          <a href="project4.html" class="btn btn-primary">Go to Project</a>
+        </div>
+      </div>
+
+      <div class="col-md-3 offset-md-1 card" data-title="Classification" data-topic="AI">
+        <div class="card-body">
+          <h5 class="card-title">Classification</h5>
+          <p class="card-text">Explore projects that categorize data into distinct classes based on 
+            learned patterns.</p>
+          <a href="project4.html" class="btn btn-primary">Go to Project</a>
+        </div>
+      </div>
+
+      <div class="col-md-3 offset-md-1 card" data-title="Unsupervised Learning" data-topic="AI">
+        <div class="card-body">
+          <h5 class="card-title">Unsupervised Learning</h5>
+          <p class="card-text">Explore projects that uncover hidden patterns and structures in unlabeled data</p>
+          <a href="project4.html" class="btn btn-primary">Go to Project</a>
+        </div>
+      </div>
+
+
+      <div class="col-md-3 card" data-title="Transfer Learning" data-topic="AI">
+        <div class="card-body">
+          <h5 class="card-title">Transfer Learning</h5>
+          <p class="card-text">Explore projects that adapt pre-trained models to new tasks with limited data.</p>
+          <a href="project4.html" class="btn btn-primary">Go to Project</a>
+        </div>
+      </div>
+
+
+      
+
+  
+      <div class="col-md-3  offset-md-1 card" data-title="NLP" data-topic="AI">
         <div class="card-body">
           <h5 class="card-title">NLP</h5>
-          <p class="card-text">A deep dive into AI and machine learning techniques.</p>
-          <a href="NLP/main.html" class="btn btn-primary">Go to Project</a>
+          <p class="card-text">Explore projects that analyze and understand human language through data-driven methods.</p>
+          <a href="NLP/main.html" class="btn btn-sm btn-primary">Go to Projects</a>
         </div>
       </div>
-      <div class="col-md-4 card" data-title="Project 2" data-topic="Web Development">
-        <div class="card-body">
-          <h5 class="card-title">Project 2</h5>
-          <p class="card-text">A web application built with React and Node.js.</p>
-          <a href="project2.html" class="btn btn-primary">Go to Project</a>
-        </div>
-      </div>
-      <div class="col-md-4 card" data-title="Project 3" data-topic="AI">
-        <div class="card-body">
-          <h5 class="card-title">Project 3</h5>
-          <p class="card-text">An AI-powered chatbot developed using NLP.</p>
-          <a href="project3.html" class="btn btn-primary">Go to Project</a>
-        </div>
-      </div>
-      <!-- More cards can be added here -->
 
-      <div class="col-md-4 card" data-title="Project 4" data-topic="AI">
+      <div class="col-md-3 offset-md-1 card" data-title="Computer Vision" data-topic="AI">
         <div class="card-body">
-          <h5 class="card-title">Project 4</h5>
-          <p class="card-text">An AI-powered chatbot developed using NLP.</p>
+          <h5 class="card-title">Computer Vision</h5>
+          <p class="card-text">Explore projects that enable machines to interpret and understand visual data.</p>
           <a href="project4.html" class="btn btn-primary">Go to Project</a>
         </div>
       </div>
-      <div class="col-md-4 card" data-title="Project 4" data-topic="AI">
+
+
+      <div class="col-md-3  card" data-title="GANs" data-topic="AI">
         <div class="card-body">
-          <h5 class="card-title">Project 4</h5>
-          <p class="card-text">An AI-powered chatbot developed using NLP.</p>
-          <a href="project4.html" class="btn btn-primary">Go to Project</a>
-        </div>
-      </div>
-      <div class="col-md-4 card" data-title="Project 4" data-topic="AI">
-        <div class="card-body">
-          <h5 class="card-title">Project 4</h5>
-          <p class="card-text">An AI-powered chatbot developed using NLP.</p>
+          <h5 class="card-title">GANs</h5>
+          <p class="card-text">Explore projects that generate new data by learning from existing patterns through adversarial networks.</p>
           <a href="project4.html" class="btn btn-primary">Go to Project</a>
         </div>
       </div>
       
+      <div class="col-md-3 offset-md-1 card featured" data-title="Papers" data-topic="AI">
+        <div class="card-body">
+          <h5 class="card-title">Papers</h5>
+          <p class="card-text">Explore insightful research papers that advance the understanding and application of AI.</p>
+          <a href="project4.html" class="btn btn-primary">Go to Project</a>
+        </div>
+      </div>
+
       
-      <div class="col-md-3  card" data-title="Project 4" data-topic="AI">
-        <div class="card-body">
-          <h5 class="card-title">Project 4</h5>
-          <p class="card-text">An AI-powered chatbot developed using NLP.</p>
-          <a href="project4.html" class="btn btn-primary">Go to Project</a>
-        </div>
-      </div>
-
-      <div class="col-md-3 offset-md-1 card" data-title="Project 4" data-topic="AI">
-        <div class="card-body">
-          <h5 class="card-title">Project 4</h5>
-          <p class="card-text">An AI-powered chatbot developed using NLP.</p>
-          <a href="project4.html" class="btn btn-primary">Go to Project</a>
-        </div>
-      </div>
-
-      <div class="col-md-3 offset-md-1 card" data-title="Project 4" data-topic="AI">
-        <div class="card-body">
-          <h5 class="card-title">Project 4</h5>
-          <p class="card-text">An AI-powered chatbot developed using NLP.</p>
-          <a href="project4.html" class="btn btn-primary">Go to Project</a>
-        </div>
-      </div>
-
-      <div class="col-md-3  card" data-title="Project 4" data-topic="AI">
-        <div class="card-body">
-          <h5 class="card-title">Project 4</h5>
-          <p class="card-text">An AI-powered chatbot developed using NLP.</p>
-          <a href="project4.html" class="btn btn-primary">Go to Project</a>
-        </div>
-      </div>
-
-      <div class="col-md-3 offset-md-1 card" data-title="Project 4" data-topic="AI">
-        <div class="card-body">
-          <h5 class="card-title">Project 4</h5>
-          <p class="card-text">An AI-powered chatbot developed using NLP.</p>
-          <a href="project4.html" class="btn btn-primary">Go to Project</a>
-        </div>
-      </div>
-
-      <div class="col-md-3 offset-md-1 card" data-title="Project 4" data-topic="AI">
-        <div class="card-body">
-          <h5 class="card-title">Project 4</h5>
-          <p class="card-text">An AI-powered chatbot developed using NLP.</p>
-          <a href="project4.html" class="btn btn-primary">Go to Project</a>
-        </div>
-      </div>
-
     </div>
   </div>
 
